@@ -6,7 +6,7 @@
 
 1.  **AWS Amplify link**
 
-    Your site is available on _`http://localhost:8000/`_
+    Go to _`https://master.d1s54rkopqtco.amplifyapp.com/`_
 
 1.  **Local Production Mode**
 
@@ -15,7 +15,7 @@
     npm start
     ```
 
-    project will be available on _`http://localhost:8000/`_
+    Go to _`http://localhost:8000/`_
 
 1.  **Local Development Mode**
 
@@ -23,4 +23,4 @@
     npm run develop
     ```
 
-    project will be available on _`http://localhost:8000/`_
+    Go to _`http://localhost:8000/`_

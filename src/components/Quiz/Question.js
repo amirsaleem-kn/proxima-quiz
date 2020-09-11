@@ -5,7 +5,7 @@ import Input from "../Form/Input"
 import Button from "../Button/Button";
 
 /**
- * @method
+ * @component
  */
 export default ({ question, totalQuestion, activeQuestion, onNext: onN, onSkip: onS }) => {
 
@@ -16,11 +16,15 @@ export default ({ question, totalQuestion, activeQuestion, onNext: onN, onSkip: 
     useEffect(() => {
         /** initialise the question timer  */
         const interval = setInterval(() => {
+            /** if we ran out of time  */
             if (timer < 1) {
+                /** remove the timer event */
                 clearInterval(interval);
+                /** if answer is already selected, submit the selected answer  */
                 if (selectedAnswer) {
                     onNext(selectedAnswer);
                 } else {
+                    /** if answer is not selected, skip the question  */
                     onSkip();
                 }
                 return;
@@ -33,20 +37,37 @@ export default ({ question, totalQuestion, activeQuestion, onNext: onN, onSkip: 
         }
     })
 
+    /**
+     * @method
+     * @description To refresh the state when question is changed
+     */
     function setDefaultState() {
         setSelectedAnswer("");
         setTimer(TIMER_S);
     }
 
+    /**
+     * @description to update the selected answer
+     * @param {object} e Event
+     */
     function updateAnswer(e) {
         setSelectedAnswer(e.target.value);
     }
 
+    /**
+     * @metohd 
+     * @description to move to the next question
+     */
     function onNext() {
         onN(question.id, selectedAnswer);
         setDefaultState();
     }
 
+    /**
+     * @method
+     * @description to skip the current question,
+     * even if the answer is selected, question will be skipped
+     */
     function onSkip() {
         onS(question.id);
         setDefaultState();

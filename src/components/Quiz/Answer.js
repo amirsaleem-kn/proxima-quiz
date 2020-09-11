@@ -1,6 +1,10 @@
 import React from "react";
 import Style from "./Quiz.module.scss";
 
+/**
+ * @component
+ * To render the answers
+ */
 export default ({ questions, answers }) => {
     return (
         <div className={Style.answerBlock}>

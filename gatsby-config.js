@@ -8,10 +8,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
-    "gatsby-plugin-sitemap",
     "gatsby-plugin-use-query-params",
-    "gatsby-plugin-robots-txt",
-    "gatsby-plugin-offline", // Enables Service Worker
     {
       resolve: "gatsby-plugin-sass",
       options: {

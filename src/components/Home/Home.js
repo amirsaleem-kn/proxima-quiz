@@ -21,15 +21,17 @@ export default () => {
             setError(true);
             return;
         }
-        navigate(`/quiz?name=${name}`);
-        return;
+        if (typeof window !== undefined) {
+            navigate(`/quiz?name=${name}`);
+            return;
+        }
     }
 
     return (
         <div className={Style.home}>
             <Heading>Enter your Name: </Heading>
-            <JumboInput value={name} onChange = {onNameChange} type="text" placeholder="John Doe" />
-            { error ? <ErrorBlock text="Please enter your name to proceed!" /> : null }
+            <JumboInput value={name} onChange={onNameChange} type="text" placeholder="John Doe" />
+            {error ? <ErrorBlock text="Please enter your name to proceed!" /> : null}
             <Button onClick={start}>Start</Button>
         </div>
     )

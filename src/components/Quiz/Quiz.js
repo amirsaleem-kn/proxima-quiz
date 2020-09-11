@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Style from "./Quiz.module.scss";
 import { navigate } from 'gatsby';
 import { useQueryParam, StringParam } from "use-query-params";
@@ -6,7 +6,10 @@ import Question from "./Question";
 import Heading from "../Typography/Heading";
 import Answer from "./Answer";
 
-/** sample quiz data  */
+/** 
+ * sample quiz data
+ * In real world, this data should come from a data source such as API call
+ */
 const data = [
     {
         id: 1,
@@ -34,6 +37,9 @@ const data = [
     }
 ];
 
+/**
+ * @component
+ */
 export default () => {
     const [name] = useQueryParam("name", StringParam);
     const [activeQuestion, setActiveQuestion] = useState(0);
@@ -43,11 +49,19 @@ export default () => {
 
     const TOTAL_QUES = data.length;
 
-    if (!name) {
-        navigate("/");
-        return;
-    }
+    useEffect(() => {
+        /** if name is not available in the query param, redirect user to the home page  */
+        if (!name) {
+            navigate("/");
+            return;
+        }
+    });
 
+    /**
+     * @method
+     * @description When a question is skipped, this method moves the user to the next question
+     * @param { number } questionId
+     */
     function onSkip(questionId) {
         const ans = { ...answers, [questionId]: "not-answered" };
         setAnswers(ans);
@@ -58,9 +72,15 @@ export default () => {
         setActiveQuestion(activeQuestion + 1);
     }
 
+    /**
+     * @method
+     * @description To move to the next question
+     * @param {number} questionId 
+     * @param {string} answer 
+     */
     function onNext(questionId, answer) {
         const ques = data.find((ques) => ques.id === questionId);
-        const ansStr = ques && ques.answer  === answer ? "right" : "wrong";
+        const ansStr = ques && ques.answer === answer ? "right" : "wrong";
         const ans = { ...answers, [questionId]: ansStr };
         setAnswers(ans);
         if (activeQuestion === TOTAL_QUES - 1) {
