@@ -13,27 +13,27 @@ import Answer from "./Answer";
 const data = [
     {
         id: 1,
-        title: "What is the colour of sky?",
-        options: ["blue", "green", "red", "orange"],
-        answer: "blue"
+        title: "What is the colour of soil",
+        options: ["green", "red", "brown", "orange"],
+        answer: "brown"
     },
     {
         id: 2,
-        title: "What is the colour of soil?",
-        options: ["a", "add", "ded", "fgh"],
-        answer: "blue"
+        title: "What is 50+50?",
+        options: ["100", "55", "34", "78"],
+        answer: "100"
     },
     {
         id: 3,
-        title: "What is the colour of floor?",
-        options: ["zzz", "aaa", "sss", "fff"],
-        answer: "blue"
+        title: "How many fingers are there in a hand?",
+        options: ["1", "3", "5", "7"],
+        answer: "5"
     },
     {
         id: 4,
-        title: "What is the colour of cloth?",
-        options: ["123", "345", "23", "455"],
-        answer: "blue"
+        title: "Which of these is a programming language",
+        options: ["IslandScript", "Bottle", "Docker", "Javascript"],
+        answer: "Javascript"
     }
 ];
 
