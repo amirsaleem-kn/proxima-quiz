@@ -1,0 +1,70 @@
+@import "../../styles/colors.scss";
+
+label {
+    font-size: 1.6rem;
+}
+
+.quiz-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.question-block {
+    margin-top: 1rem;
+    ul {
+        list-style-type: none;
+        margin: 2rem 0;
+        li {
+            margin: 0.8rem 0 0 0;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            input {
+                display: none;
+            }
+            label {
+                background: white;
+                display: block;
+                cursor: pointer;
+                width: 100%;
+                padding: 0.5rem 1rem;
+                text-transform: capitalize;
+                display: inline-block;
+            }
+            input[type="radio"]:checked+label {
+                background: $contrast;
+            }
+        }
+    }
+    .action-block {
+        text-align: center;
+        button {
+            margin: 0 5px;
+        }
+    }
+}
+
+.ques-counter {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.ques-timer {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.answer-block {
+    table {
+        border-collapse: collapse;
+        tr {
+            th, td {
+                font-size: 1.2rem;
+                border: 1px solid #ccc;
+                padding: 1rem;
+            }
+        }
+    }
+}

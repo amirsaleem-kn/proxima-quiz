@@ -1,0 +1,14 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    input {
+        text-align: center;
+        margin: 1rem 0;
+    }
+    button {
+        margin-top: 1rem;
+    }
+}

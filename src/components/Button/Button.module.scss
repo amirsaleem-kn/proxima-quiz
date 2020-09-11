@@ -1,0 +1,16 @@
+@import "../../styles/colors.scss";
+
+.button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: $secondary;
+    border: $secondary;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:disabled {
+    background-color: #94d6ce;
+    cursor: not-allowed;
+}

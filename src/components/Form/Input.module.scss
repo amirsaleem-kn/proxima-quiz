@@ -1,0 +1,20 @@
+@import "../../styles/colors.scss";
+
+.input {
+    padding: 0.4rem;
+}
+
+input[type="radio"] {
+    // display: block;
+}
+
+.jumbo-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid $primary;
+    border-radius: 4px;
+    &:focus {
+        border: 1px solid $secondary;
+    }
+}
